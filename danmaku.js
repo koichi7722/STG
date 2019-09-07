@@ -118,7 +118,7 @@ class Enemy extends SpriteActor {
         const hitArea = new Rectangle(0, 0, 16, 16);
         super(x, y, sprite, hitArea, ['enemy']);
 
-        this.maxHp = 50;
+        this.maxHp = 100;
         this.currentHp = this.maxHp;
 
         this._interval = 10;
@@ -157,9 +157,9 @@ class Enemy extends SpriteActor {
         // インターバルを経過していたら弾を撃つ
         this._timeCount++;
         if(this._timeCount > this._interval) {
-            this._count += 10;
+            this._count += 100;
             this.shootCircularBullets(10, 1, this._count);
-            this._timeCount = 0;
+            this._timeCount = 1;
         }
 
         // HPがゼロになったらdestroyする
@@ -239,7 +239,7 @@ class DanmakuStgMainScene extends Scene {
 class DanmakuStgTitleScene extends Scene {
     constructor(renderingTarget) {
         super('タイトル', 'black', renderingTarget);
-        const title = new TextLabel(100, 200, '弾幕STG');
+        const title = new TextLabel(100, 200, 'シューティングゲームSpaceを押してください。');
         this.add(title);
     }
 
