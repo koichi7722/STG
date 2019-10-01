@@ -239,7 +239,7 @@ class DanmakuStgMainScene extends Scene {
 class DanmakuStgTitleScene extends Scene {
     constructor(renderingTarget) {
         super('タイトル', 'black', renderingTarget);
-        const title = new TextLabel(100, 200, 'シューティングゲームSpaceを押してください。');
+        const title = new TextLabel(100, 200, '弾幕STG');
         this.add(title);
     }
 
